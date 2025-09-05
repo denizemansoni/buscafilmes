@@ -1,0 +1,31 @@
+.navbar {
+  background-color: #000;
+  padding: 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.navbar-title {
+  font-size: 2rem;
+  color: #e50914;
+  margin: 0;
+  text-align: center;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.navbar-links a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #00bfff;
+}

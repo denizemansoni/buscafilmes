@@ -25,6 +25,6 @@ Aplicação web desenvolvida com React para explorar filmes e séries usando a A
 
 ```bash
 git clone https://github.com/denizemansoni/buscafilmes.git
-cd movie-explorer
+cd movie-app
 npm install
 npm run dev

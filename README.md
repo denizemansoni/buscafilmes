@@ -1,4 +1,4 @@
-# 🎬 Movie Explorer
+# 🎬 BuscaFilmes
 
 Aplicação web desenvolvida com React para explorar filmes e séries usando a API OMDb. Permite buscar títulos, visualizar detalhes e salvar favoritos com uma interface moderna e responsiva.
 

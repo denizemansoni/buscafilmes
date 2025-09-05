@@ -11,7 +11,7 @@ Aplicação web desenvolvida com React para explorar filmes e séries usando a A
 - 📱 Layout responsivo para desktop e mobile
 - 🌐 Deploy online via Vercel
 
-🔗 **Projeto online:** [Clique aqui para acessar o Movie Explorer](https://buscafilmes-lemon.vercel.app)
+🔗 **Projeto online:** [Clique aqui para acessar o BuscaFilmes](https://buscafilmes-lemon.vercel.app)
 
 ## 🛠️ Tecnologias utilizadas
 

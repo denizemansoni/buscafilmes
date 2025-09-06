@@ -19,6 +19,7 @@ export default function Details() {
       <p><strong>Elenco:</strong> {movie.Actors}</p>
       <p><strong>Sinopse:</strong> {movie.Plot}</p>
       <p><strong>Avaliação:</strong> {movie.imdbRating}</p>
-    </div>
+      <img src={movie.Poster} alt={movie.Title} />
+      </div>
   );
 }

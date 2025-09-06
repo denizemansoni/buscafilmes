@@ -10,7 +10,9 @@ export default function Home() {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [favorites, setFavorites] = useState(() => JSON.parse(localStorage.getItem('favorites')) || []);
+  const [favorites, setFavorites] = useState(
+    () => JSON.parse(localStorage.getItem('favorites')) || []
+  );
 
   useEffect(() => {
     if (!query) return;
@@ -32,37 +34,36 @@ export default function Home() {
     const exists = favorites.find(f => f.imdbID === movie.imdbID);
     const updated = exists
       ? favorites.filter(f => f.imdbID !== movie.imdbID)
-      : [...favorites, movie];
+      : [movie, ...favorites];
     setFavorites(updated);
     localStorage.setItem('favorites', JSON.stringify(updated));
   };
 
   return (
-    <div>
+    <div className="container">
       <SearchBar onSearch={setQuery} />
-      {loading && <p>Carregando...</p>}
-      {error && <p>{error}</p>}
-      {movies.map(movie => (
-        <MovieCard
-          key={movie.imdbID}
-          movie={movie}
-          onDetails={(id) => window.location.href = `/details/${id}`}
-          onToggleFavorite={toggleFavorite}
-          isFavorite={favorites.some(f => f.imdbID === movie.imdbID)}
-        />
-      ))}
-      <Pagination currentPage={page} onPageChange={setPage} />
+
+      {loading && <p style={{ textAlign: 'center' }}>Carregando...</p>}
+      {error && <p style={{ textAlign: 'center', color: 'tomato' }}>{error}</p>}
+
       <div className="movie-grid">
-  {movies.map(movie => (
-    <MovieCard
-      key={movie.imdbID}
-      movie={movie}
-      onDetails={(id) => window.location.href = `/details/${id}`}
-      onToggleFavorite={toggleFavorite}
-      isFavorite={favorites.some(f => f.imdbID === movie.imdbID)}
-    />
-  ))}
-</div>
+        {movies.map(movie => (
+          <MovieCard
+            key={movie.imdbID}
+            movie={movie}
+            onDetails={id => window.location.href = `/details/${id}`}
+            onToggleFavorite={toggleFavorite}
+            isFavorite={favorites.some(f => f.imdbID === movie.imdbID)}
+          />
+        ))}
+      </div>
+
+      {movies.length > 0 && (
+        <Pagination
+          currentPage={page}
+          onPageChange={newPage => setPage(newPage)}
+        />
+      )}
     </div>
   );
 }

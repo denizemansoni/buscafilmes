@@ -38,25 +38,58 @@ nav {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  margin: 1rem 0;
+  background-color: #000;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  flex-wrap: wrap;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 1rem;
+  margin-bottom: 1rem;
+  
 }
 
 nav a {
   text-decoration: none;
-  color: #f5f5f5;
+  color: #fff;
   font-weight: bold;
   transition: color 0.3s ease;
+  font-size: 1.2rem;
+  z-index: 1;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background-color: #e50914;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 nav a:hover {
   color: #e50914;
+  background-color: #fff;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
 }
 
 form {
   display: flex;
   justify-content: center;
   margin: 2rem 0;
-}
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  }
 
 input[type="text"] {
   padding: 0.75rem;
@@ -75,11 +108,18 @@ button {
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  transition: background-color 0.3s ease; /* suaviza a transição */
+  font-size: 1rem;  
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 1;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  }
 
 button:hover {
   background-color: #b00610;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
 }
 
 .movie-grid {
@@ -88,7 +128,13 @@ button:hover {
   gap: 2rem;
   padding: 2rem;
   justify-items: center;
-}
+  z-index: 1;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  }
 
 .movie-card {
   background-color: #1f1f1f;
@@ -99,24 +145,48 @@ button:hover {
   text-align: center;
   width: 100%;
   max-width: 200px;
-}
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  height: 100%;
+  justify-content: space-between;
+  }
 
 .movie-card:hover {
   transform: scale(1.05);
-}
+  box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+  }
 
 .movie-card img {
   width: 100%;
   height: 300px;
   object-fit: cover;
   border-radius: 12px 12px 0 0;
-}
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+  }
 
 .movie-card h3 {
   margin: 0.5rem 0;
   font-size: 1rem;
   color: #fff;
-}
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 3em;
+  max-height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2em;
+  height: 3.6em; /* 3 linhas de texto */
+  margin-bottom: 0.5rem;
+  }
 
 .movie-card button {
   margin-top: 0.5rem;
@@ -127,17 +197,22 @@ button:hover {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .movie-card button:hover {
   background-color: #b00610;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  
 }
 
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
     gap: 1rem;
-  }
+      }
 
   form {
     flex-direction: column;
@@ -153,10 +228,20 @@ button:hover {
   .navbar-links {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
   }
 
   .search-container {
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
   }
 
   input[type="text"] {
@@ -166,6 +251,8 @@ button:hover {
 
   .movie-grid {
     grid-template-columns: 1fr;
+    padding: 1rem;
+
   }
 }
 @media (max-width: 768px) {
@@ -177,6 +264,9 @@ button:hover {
   .search-form {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .search-form input[type="text"] {
@@ -195,15 +285,51 @@ button:hover {
 
   .movie-card {
     max-width: 100%;
+    height: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease;
+    margin-bottom: 1rem;
+
   }
 
   .movie-card img {
     height: auto;
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+
   }
 }
 
 .movie-card h3 {
   font-size: clamp(1rem, 2vw, 1.2rem);
+  margin: 0.5rem 0;
+  color: #fff;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 3em;
+  max-height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2em;
+  height: 3.6em; /* 3 linhas de texto */
+  margin-bottom: 0.5rem;
+
 }
 
 .search-wrapper {
@@ -212,6 +338,13 @@ button:hover {
   align-items: center;
   width: 100%;
   margin-top: 2rem;
+  margin-bottom: 2rem;
+  z-index: 1;
+  position: relative;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 .search-form {
@@ -220,6 +353,10 @@ button:hover {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+
 }
 
 .search-form input[type="text"] {
@@ -228,6 +365,11 @@ button:hover {
   border-radius: 6px;
   border: none;
   font-size: 1rem;
+  flex-grow: 1;
+  min-width: 200px;
+  margin-right: 0;
+  box-sizing: border-box;
+
 }
 
 .search-form button {
@@ -239,14 +381,60 @@ button:hover {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 1rem;  
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 1;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  flex-shrink: 0;
+
 }
 
 .search-form button:hover {
   background-color: #b00610;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  z-index: 1;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  }
+/* styles.css */
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #e50914;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.pagination button:not(:disabled):hover {
+  background-color: #b00610;
+}
+
+.pagination span {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
 }

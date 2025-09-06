@@ -1,15 +1,26 @@
-export default function Pagination({ currentPage, onPageChange }) {
+// Pagination.jsx
+export default function Pagination({
+  currentPage,
+  totalPages = Infinity,
+  onPageChange
+}) {
   return (
-    <div style={{ marginTop: '1rem', display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+    <div className="pagination">
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        ⬅️ Anterior
+        Anterior
       </button>
-      <span>Página {currentPage}</span>
-      <button onClick={() => onPageChange(currentPage + 1)}>
-        Próxima ➡️
+      <span>
+        Página {currentPage}
+        {isFinite(totalPages) && ` de ${totalPages}`}
+      </span>
+      <button
+        onClick={() => onPageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
+      >
+        Próxima
       </button>
     </div>
   );
